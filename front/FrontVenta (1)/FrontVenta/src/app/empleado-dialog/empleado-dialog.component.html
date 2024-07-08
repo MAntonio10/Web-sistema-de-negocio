@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Agregar Empleado</h1>
+    <form class="form" [formGroup]="empleadoForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>Código Empleado:</label>
+        <input type="text" formControlName="codigo_Empleado">
+        <div *ngIf="empleadoForm.controls['codigo_Empleado'].invalid && empleadoForm.controls['codigo_Empleado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Usuario:</label>
+        <input type="text" formControlName="usuario">
+        <div *ngIf="empleadoForm.controls['usuario'].invalid && empleadoForm.controls['usuario'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Tipo Empleado ID:</label>
+        <input type="text" formControlName="tipo_Empleado_id_tipo_empleado">
+        <div *ngIf="empleadoForm.controls['tipo_Empleado_id_tipo_empleado'].invalid && empleadoForm.controls['tipo_Empleado_id_tipo_empleado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Clave:</label>
+        <input type="text" formControlName="clave">
+        <div *ngIf="empleadoForm.controls['clave'].invalid && empleadoForm.controls['clave'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="empleadoForm.controls['estado'].invalid && empleadoForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Almacén ID:</label>
+        <input type="text" formControlName="almacen_Id_Almacen">
+        <div *ngIf="empleadoForm.controls['almacen_Id_Almacen'].invalid && empleadoForm.controls['almacen_Id_Almacen'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!empleadoForm.valid">Agregar</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

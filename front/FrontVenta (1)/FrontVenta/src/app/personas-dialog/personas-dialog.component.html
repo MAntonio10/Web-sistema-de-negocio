@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Agregar Persona</h1>
+    <form class="form" [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>NIT:</label>
+        <input type="text" formControlName="nit">
+        <div *ngIf="personaForm.controls['nit'].invalid && personaForm.controls['nit'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>DPI:</label>
+        <input type="text" formControlName="dpi">
+        <div *ngIf="personaForm.controls['dpi'].invalid && personaForm.controls['dpi'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Nombre:</label>
+        <input type="text" formControlName="nombre">
+        <div *ngIf="personaForm.controls['nombre'].invalid && personaForm.controls['nombre'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Apellido:</label>
+        <input type="text" formControlName="apellido">
+        <div *ngIf="personaForm.controls['apellido'].invalid && personaForm.controls['apellido'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Teléfono:</label>
+        <input type="text" formControlName="telefono">
+        <div *ngIf="personaForm.controls['telefono'].invalid && personaForm.controls['telefono'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Dirección:</label>
+        <input type="text" formControlName="direccion">
+        <div *ngIf="personaForm.controls['direccion'].invalid && personaForm.controls['direccion'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="personaForm.controls['estado'].invalid && personaForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!personaForm.valid">Guardar</button>
+        <button mat-raised-button color="accent" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

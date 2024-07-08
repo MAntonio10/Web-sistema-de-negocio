@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Tipo Empleado</h1>
+    <form class="form" [formGroup]="tipoEmpleadoForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_tipo_empleado" formControlName="id_tipo_empleado" readonly />
+
+      <div>
+        <label>Tipo Empleado:</label>
+        <input type="text" formControlName="tipo_empleado">
+        <div *ngIf="tipoEmpleadoForm.controls['tipo_empleado'].invalid && tipoEmpleadoForm.controls['tipo_empleado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="tipoEmpleadoForm.controls['estado'].invalid && tipoEmpleadoForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!tipoEmpleadoForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

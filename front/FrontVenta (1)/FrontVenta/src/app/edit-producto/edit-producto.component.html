@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Producto</h1>
+    <form class="form" [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_Producto" formControlName="id_Producto" readonly />
+
+      <div>
+        <label>Categoría ID:</label>
+        <input type="text" formControlName="categoria_Id_Categoria">
+        <div *ngIf="productoForm.controls['categoria_Id_Categoria'].invalid && productoForm.controls['categoria_Id_Categoria'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Proveedor ID:</label>
+        <input type="text" formControlName="proveedor_Id_Proveedor">
+        <div *ngIf="productoForm.controls['proveedor_Id_Proveedor'].invalid && productoForm.controls['proveedor_Id_Proveedor'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Almacén ID:</label>
+        <input type="text" formControlName="almace_Id_Almacen">
+        <div *ngIf="productoForm.controls['almace_Id_Almacen'].invalid && productoForm.controls['almace_Id_Almacen'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Nombre del Producto:</label>
+        <input type="text" formControlName="nombre_producto">
+        <div *ngIf="productoForm.controls['nombre_producto'].invalid && productoForm.controls['nombre_producto'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Precio:</label>
+        <input type="text" formControlName="precio">
+        <div *ngIf="productoForm.controls['precio'].invalid && productoForm.controls['precio'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Stock:</label>
+        <input type="text" formControlName="stock">
+        <div *ngIf="productoForm.controls['stock'].invalid && productoForm.controls['stock'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Descripción:</label>
+        <input type="text" formControlName="descripcion">
+        <div *ngIf="productoForm.controls['descripcion'].invalid && productoForm.controls['descripcion'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="productoForm.controls['estado'].invalid && productoForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!productoForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

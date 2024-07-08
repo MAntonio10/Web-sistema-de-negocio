@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  color: #1a1919;
+}
+
+.menu {
+  text-align: center;
+}
+h1{
+  padding: 35px;
+}
+.menu-title {
+  
+  border-radius: 10px;
+  border-color: #000000;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu-subtitle {
+  font-size: 44px;
+  margin-bottom: 30px;
+  color: #000000;
+  
+}
+
+.menu-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.menu-button {
+  border-radius: 15px;            /* Aplica un radio de borde de 15px */
+  border: 2px solid #000000;      /* Establece un borde sólido de 2px de color negro */
+  padding: 15px 30px;
+  font-size: 35px;
+  background-color: #9AC2CB;
+  color: rgb(5, 5, 5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #45a049;
+}

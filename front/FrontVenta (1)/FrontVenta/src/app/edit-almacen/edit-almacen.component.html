@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Almacén</h1>
+    <form class="form" [formGroup]="almacenForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_Almacen" formControlName="id_Almacen" readonly />
+
+      <div>
+        <label>Nombre del Almacén:</label>
+        <input type="text" formControlName="nombre_almacen">
+        <div *ngIf="almacenForm.controls['nombre_almacen'].invalid && almacenForm.controls['nombre_almacen'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Dirección:</label>
+        <input type="text" formControlName="direccion_almacen">
+        <div *ngIf="almacenForm.controls['direccion_almacen'].invalid && almacenForm.controls['direccion_almacen'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Teléfono:</label>
+        <input type="text" formControlName="telefono_almacen">
+        <div *ngIf="almacenForm.controls['telefono_almacen'].invalid && almacenForm.controls['telefono_almacen'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="almacenForm.controls['estado'].invalid && almacenForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!almacenForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

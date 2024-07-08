@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="pacifico-regular">
+    Ventas
+  </div>
+  <div class="agregar">
+    <button style="margin-right: 50%; margin-bottom: 2%;" mat-raised-button color="primary" class="btn-volver" routerLink="/menu">Volver</button>
+    <button style="margin-bottom: 2%;" mat-raised-button color="primary" class="btn-agregar" routerLink="/venta-dialog">Agregar Venta</button>
+    <button style="margin-bottom: 2%;" mat-raised-button color="primary" (click)="imprimirTabla()">Imprimir Tabla</button>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort id="tablaVentas">
+      <ng-container matColumnDef="id_Venta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> ID Venta </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.id_Venta}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cliente_Codigo_Cliente">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Código Cliente </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.cliente_Codigo_Cliente}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="empleado_Codigo_Empleado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Código Empleado </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.empleado_Codigo_Empleado}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numero_venta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Número de Venta </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.numero_venta}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha_venta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Fecha de Venta </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.fecha_venta | date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="monto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Monto </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.monto}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Estado </th>
+        <td mat-cell *matCellDef="let element" class="text-center"> {{element.estado}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Acciones </th>
+        <td mat-cell *matCellDef="let element" class="text-center">
+          <mat-icon class="edit" [routerLink]="['/edit-venta', element.id_Venta]">edit</mat-icon>
+          <mat-icon class="delete" (click)="eliminarVenta(element)">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

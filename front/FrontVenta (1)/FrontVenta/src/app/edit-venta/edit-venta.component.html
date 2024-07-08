@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Venta</h1>
+    <form class="form" [formGroup]="ventaForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_Venta" formControlName="id_Venta" />
+
+      <div>
+        <label>Cliente ID:</label>
+        <input type="text" formControlName="cliente_Codigo_Cliente">
+        <div *ngIf="ventaForm.controls['cliente_Codigo_Cliente'].invalid && ventaForm.controls['cliente_Codigo_Cliente'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Empleado ID:</label>
+        <input type="text" formControlName="empleado_Codigo_Empleado">
+        <div *ngIf="ventaForm.controls['empleado_Codigo_Empleado'].invalid && ventaForm.controls['empleado_Codigo_Empleado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Número de Venta:</label>
+        <input type="text" formControlName="numero_venta">
+        <div *ngIf="ventaForm.controls['numero_venta'].invalid && ventaForm.controls['numero_venta'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Fecha de Venta:</label>
+        <input type="date" formControlName="fecha_venta">
+        <div *ngIf="ventaForm.controls['fecha_venta'].invalid && ventaForm.controls['fecha_venta'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Monto:</label>
+        <input type="text" formControlName="monto">
+        <div *ngIf="ventaForm.controls['monto'].invalid && ventaForm.controls['monto'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="ventaForm.controls['estado'].invalid && ventaForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!ventaForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

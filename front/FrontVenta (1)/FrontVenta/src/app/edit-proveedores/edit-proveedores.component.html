@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Proveedor</h1>
+    <form class="form" [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_proveedor" formControlName="id_proveedor" readonly />
+
+      <div>
+        <label>Nombre del Proveedor:</label>
+        <input type="text" formControlName="nombre_proveedor">
+        <div *ngIf="proveedorForm.controls['nombre_proveedor'].invalid && proveedorForm.controls['nombre_proveedor'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Teléfono:</label>
+        <input type="text" formControlName="telefono_proveedor">
+        <div *ngIf="proveedorForm.controls['telefono_proveedor'].invalid && proveedorForm.controls['telefono_proveedor'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="proveedorForm.controls['estado'].invalid && proveedorForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!proveedorForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

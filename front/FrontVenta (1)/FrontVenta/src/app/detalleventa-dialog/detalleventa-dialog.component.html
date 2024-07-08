@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Agregar Detalle de Venta</h1>
+    <form class="form" [formGroup]="detalleVentaForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>ID de Venta:</label>
+        <input type="text" formControlName="venta_Id_venta">
+        <div *ngIf="detalleVentaForm.controls['venta_Id_venta'].invalid && detalleVentaForm.controls['venta_Id_venta'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      
+      <div>
+        <label>ID de Producto:</label>
+        <input type="text" formControlName="producto_Id_Producto">
+        <div *ngIf="detalleVentaForm.controls['producto_Id_Producto'].invalid && detalleVentaForm.controls['producto_Id_Producto'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      
+      <div>
+        <label>Cantidad:</label>
+        <input type="text" formControlName="cantidad">
+        <div *ngIf="detalleVentaForm.controls['cantidad'].invalid && detalleVentaForm.controls['cantidad'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      
+      <div>
+        <label>Precio de Venta:</label>
+        <input type="text" formControlName="precio_venta">
+        <div *ngIf="detalleVentaForm.controls['precio_venta'].invalid && detalleVentaForm.controls['precio_venta'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!detalleVentaForm.valid">Agregar</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

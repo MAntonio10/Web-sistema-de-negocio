@@ -1,0 +1,78 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 25px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 1000px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+  }
+  
+  .btn-opcion {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"] {
+    background-color: #6f42c1;
+    color: white;
+  }
+  
+  button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+  }

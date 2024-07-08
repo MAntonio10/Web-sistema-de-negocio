@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Agregar Cliente</h1>
+    <form class="form" [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>ID Persona:</label>
+            <input type="text" formControlName="id_Persona">
+            <div *ngIf="clienteForm.controls['id_Persona'].invalid && clienteForm.controls['id_Persona'].touched" class="error-message">
+              *Campo requerido
+            </div>
+          </div>
+        <div>
+        <label>Código Cliente:</label>
+        <input type="text" formControlName="codigo_Cliente">
+        <div *ngIf="clienteForm.controls['codigo_Cliente'].invalid && clienteForm.controls['codigo_Cliente'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>ID Tipo Cliente:</label>
+        <input type="text" formControlName="tipoCliente_Id_TipoCliente">
+        <div *ngIf="clienteForm.controls['tipoCliente_Id_TipoCliente'].invalid && clienteForm.controls['tipoCliente_Id_TipoCliente'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="clienteForm.controls['estado'].invalid && clienteForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!clienteForm.valid">Agregar</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

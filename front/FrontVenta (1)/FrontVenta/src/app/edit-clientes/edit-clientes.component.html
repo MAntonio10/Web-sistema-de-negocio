@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="pacifico-regular">Editar Cliente</h1>
+    <form class="form" [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_Persona" formControlName="id_Persona" readonly />
+  
+      <div>
+        <label>Código Cliente:</label>
+        <input type="text" formControlName="codigo_Cliente">
+        <div *ngIf="clienteForm.controls['codigo_Cliente'].invalid && clienteForm.controls['codigo_Cliente'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Tipo Cliente ID:</label>
+        <input type="text" formControlName="tipoCliente_Id_TipoCliente">
+        <div *ngIf="clienteForm.controls['tipoCliente_Id_TipoCliente'].invalid && clienteForm.controls['tipoCliente_Id_TipoCliente'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="clienteForm.controls['estado'].invalid && clienteForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!clienteForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

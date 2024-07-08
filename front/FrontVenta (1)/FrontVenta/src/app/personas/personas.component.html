@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="pacifico-regular">
+      Personas
+    </div>
+    <div class="agregar">
+      <button style="margin-right: 50%; margin-bottom: 2%;" mat-raised-button color="primary" class="btn-volver" routerLink="/menu">Volver</button>
+      <button style="margin-bottom: 2%;" mat-raised-button color="primary" class="btn-agregar" routerLink="/personas-dialog">Agregar Persona</button>
+    </div>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <!-- Column Definitions -->
+        <ng-container matColumnDef="id_Persona">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> ID Persona </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.id_Persona}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="nit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> NIT </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.nit}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dpi">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> DPI </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.dpi}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Nombre </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.nombre}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="apellido">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Apellido </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.apellido}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="telefono">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Teléfono </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.telefono}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="direccion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Dirección </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.direccion}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Estado </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.estado}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> Acciones </th>
+          <td mat-cell *matCellDef="let element" class="text-center">  
+            <mat-icon class="edit" [routerLink]="['/edit-personas', element.id_Persona]">edit</mat-icon>
+            <mat-icon class="delete" (click)="deletePersona(element)">delete</mat-icon>
+          </td>
+        </ng-container>
+  
+        <!-- Header and Row Declarations -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+  

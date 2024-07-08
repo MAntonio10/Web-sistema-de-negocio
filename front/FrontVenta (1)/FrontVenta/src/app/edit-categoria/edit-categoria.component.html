@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Categoría</h1>
+    <form class="form" [formGroup]="categoriaForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="id_Categoria" formControlName="id_Categoria" readonly />
+
+      <div>
+        <label>Nombre Categoría:</label>
+        <input type="text" formControlName="nombre_categoria">
+        <div *ngIf="categoriaForm.controls['nombre_categoria'].invalid && categoriaForm.controls['nombre_categoria'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Descripción:</label>
+        <input type="text" formControlName="descripcion">
+        <div *ngIf="categoriaForm.controls['descripcion'].invalid && categoriaForm.controls['descripcion'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Estado:</label>
+        <input type="text" formControlName="estado">
+        <div *ngIf="categoriaForm.controls['estado'].invalid && categoriaForm.controls['estado'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!categoriaForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

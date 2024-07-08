@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="pacifico-regular">Editar Devolución</h1>
+    <form class="form" [formGroup]="devolucionForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id_Devolucion">
+      <div>
+        <label>ID Detalle Venta:</label>
+        <input type="text" formControlName="detalle_venta_id_detalle_venta">
+        <div *ngIf="devolucionForm.controls['detalle_venta_id_detalle_venta'].invalid && devolucionForm.controls['detalle_venta_id_detalle_venta'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>ID Producto:</label>
+        <input type="text" formControlName="detalle_venta_id_producto">
+        <div *ngIf="devolucionForm.controls['detalle_venta_id_producto'].invalid && devolucionForm.controls['detalle_venta_id_producto'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Motivo:</label>
+        <input type="text" formControlName="motivo">
+        <div *ngIf="devolucionForm.controls['motivo'].invalid && devolucionForm.controls['motivo'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Fecha Devolución:</label>
+        <input type="date" formControlName="fecha_devolucion">
+        <div *ngIf="devolucionForm.controls['fecha_devolucion'].invalid && devolucionForm.controls['fecha_devolucion'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div>
+        <label>Cantidad:</label>
+        <input type="text" formControlName="cantidad">
+        <div *ngIf="devolucionForm.controls['cantidad'].invalid && devolucionForm.controls['cantidad'].touched" class="error-message">
+          *Campo requerido
+        </div>
+      </div>
+      <div class="btn-opcion">
+        <button mat-raised-button color="primary" class="btn-agregar" type="submit" [disabled]="!devolucionForm.valid">Guardar cambios</button>
+        <button mat-raised-button color="primary" class="btn-agregar" type="button" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

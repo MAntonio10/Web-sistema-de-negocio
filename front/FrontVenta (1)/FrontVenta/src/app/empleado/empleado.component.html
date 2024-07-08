@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="pacifico-regular">
+      Empleados
+    </div>
+    <div class="agregar">
+      <button style="margin-right: 50%; margin-bottom: 2%;" mat-raised-button color="primary" class="btn-volver" routerLink="/menu">Volver</button>
+      <button style="margin-bottom: 2%;" mat-raised-button color="primary" class="btn-agregar" routerLink="/empleado-dialog">Agregar Empleado</button>
+    </div>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <ng-container matColumnDef="id_Persona">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> ID Persona </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.id_Persona}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="codigo_Empleado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Código Empleado </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.codigo_Empleado}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Usuario </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.usuario}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="tipo_Empleado_id_tipo_empleado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Tipo Empleado ID </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.tipo_Empleado_id_tipo_empleado}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="clave">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Clave </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.clave}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Estado </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.estado}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="almacen_Id_Almacen">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Almacén ID </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.almacen_Id_Almacen}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> Acciones </th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+            <mat-icon class="edit" [routerLink]="['/edit-empleado', element.id_Persona]">edit</mat-icon>
+            <mat-icon class="delete" (click)="eliminarEmpleado(element)">delete</mat-icon>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+  

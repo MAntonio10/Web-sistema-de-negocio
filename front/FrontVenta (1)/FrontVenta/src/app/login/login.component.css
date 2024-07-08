@@ -1,0 +1,96 @@
+.outer{
+  height: 100vh;
+  background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
+}
+
+.panel-heading{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#forget{
+  min-width: 100px;
+  margin-left: auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.form-inline label{
+  padding-left: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.btn{
+  margin-top: 20px;
+  border-radius: 10px;
+  min-height: 50px;
+}
+
+.panel{
+  min-height: 380px;
+  box-shadow: 1px 1px 10px rgb(198, 188, 188);
+  border-radius: 20px;
+  margin-top: 100px;
+  margin-right: 100px;
+}
+
+.input-field{
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #000000;
+}
+
+.input-field.error{
+  border: 1px solid red;
+  color: red;
+}
+
+input[type='text'],
+input[type='password']{
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+}
+
+.fa-eye-slash.btn{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+
+.titulo{
+  text-align: center;
+  background-color: #ddd;
+  min-height: 50px;
+  font-size: 30px;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+  color: #1a1919;
+}
+
+h1{
+  padding: 25px;
+}
